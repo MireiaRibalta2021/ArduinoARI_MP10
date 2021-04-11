@@ -1,8 +1,5 @@
 /**********************************************************************************
-**                                                                               **
 **                              Array de 8 LEDs                                  **
-**                                                                               **
-**                                                                               **
 **********************************************************************************/
 //********** Includes *************************************************************
 //********** Variables ************************************************************
@@ -14,7 +11,12 @@ const int led4 = 9;          // donar nom al pin 9 de l’Arduino
 const int led5 = 10;         // donar nom al pin 10 de l’Arduino
 const int led6 = 11;         // donar nom al pin 11 de l’Arduino
 const int led7 = 12;         // donar nom al pin 12 de l’Arduino
-const int buttonPin = 2;     // donar nom al pin 2 de l’Arduino
+const int buttonPin2 = 2;     // donar nom al pin 2 de l’Arduino
+const int buttonPin3 = 3;     // donar nom al pin 3 de l’Arduino
+int buttonState2 = 0;         // per guardar l’estat en que és troba el button2
+int buttonState3 = 0;         // per guardar l’estat en que és troba el button3
+
+
 //********** Setup ****************************************************************
 void setup()
 {
@@ -26,39 +28,121 @@ void setup()
   pinMode(led5, OUTPUT);     // definir el pin 10 com una sortida
   pinMode(led6, OUTPUT);     // definir el pin 11 com una sortida
   pinMode(led7, OUTPUT);     // definir el pin 12 com una sortida
-  pinMode(buttonPin, INPUT); // definir el pin 2 com una entrada  
+  pinMode(buttonPin2, INPUT); // definir el pin 2 com una entrada  
+  pinMode(buttonPin3, INPUT); // definir el pin 3 com una entrada  
 }
 //********** Loop *****************************************************************
 void loop()
 {
-  if (digitalRead(buttonPin) == 0)
-  {
-digitalWrite(led0, HIGH);    // posar a 5V el pin 5
+  buttonState2 = digitalRead(buttonPin2);
+  buttonState3 = digitalRead(buttonPin3);
+    if (digitalRead(buttonPin2) == 0&&digitalRead(buttonPin3)==1)
+    {
+  digitalWrite(led0, HIGH);    // posar a 5V el pin 5
   digitalWrite(led1, LOW);    // posar a 5V el pin 6
-  digitalWrite(led2, HIGH);    // posar a 5V el pin 7
+  digitalWrite(led2, LOW);    // posar a 5V el pin 7
   digitalWrite(led3, LOW);    // posar a 5V el pin 8
-  digitalWrite(led4, HIGH);    // posar a 5V el pin 9
+  digitalWrite(led4, LOW);    // posar a 5V el pin 9
   digitalWrite(led5, LOW);    // posar a 5V el pin 10
-  digitalWrite(led6, HIGH);    // posar a 5V el pin 11
-  digitalWrite(led7, LOW);    // posar a 5V el pin 12
+  digitalWrite(led6, LOW);    // posar a 5V el pin 11
+  digitalWrite(led7, HIGH);    // posar a 5V el pin 12
   
-  delay(500);                  // es queden leds 500ms encesos
+  delay(87);                  // es queden leds 500ms encesos
   
   digitalWrite(led0, LOW);     // posar a 0V el pin 5
   digitalWrite(led1, HIGH);     // posar a 0V el pin 6
   digitalWrite(led2, LOW);     // posar a 0V el pin 7
-  digitalWrite(led3, HIGH);     // posar a 0V el pin 8
+  digitalWrite(led3, LOW);     // posar a 0V el pin 8
+  digitalWrite(led4, LOW);     // posar a 0V el pin 9
+  digitalWrite(led5, LOW);     // posar a 0V el pin 10
+  digitalWrite(led6, HIGH);     // posar a 0V el pin 11
+  digitalWrite(led7, LOW);     // posar a 0V el pin 12
+  
+  delay(87);                  // es queden leds 500ms encesos
+  
+  digitalWrite(led0, LOW);     // posar a 0V el pin 5
+  digitalWrite(led1, LOW);     // posar a 0V el pin 6
+  digitalWrite(led2, HIGH);     // posar a 0V el pin 7
+  digitalWrite(led3, LOW);     // posar a 0V el pin 8
   digitalWrite(led4, LOW);     // posar a 0V el pin 9
   digitalWrite(led5, HIGH);     // posar a 0V el pin 10
   digitalWrite(led6, LOW);     // posar a 0V el pin 11
+  digitalWrite(led7, LOW);     // posar a 0V el pin 12
+                   
+  delay(87);                  
+  
+  digitalWrite(led0, LOW);     // posar a 0V el pin 5
+  digitalWrite(led1, LOW);     // posar a 0V el pin 6
+  digitalWrite(led2, LOW);     // posar a 0V el pin 7
+  digitalWrite(led3, HIGH);     // posar a 0V el pin 8
+  digitalWrite(led4, HIGH);     // posar a 0V el pin 9
+  digitalWrite(led5, LOW);     // posar a 0V el pin 10
+  digitalWrite(led6, LOW);     // posar a 0V el pin 11
+  digitalWrite(led7, LOW);     // posar a 0V el pin 12
+  
+  delay(87);                  // es queden leds 500ms encesos
+  
+  digitalWrite(led0, LOW);     // posar a 0V el pin 5
+  digitalWrite(led1, LOW);     // posar a 0V el pin 6
+  digitalWrite(led2, HIGH);     // posar a 0V el pin 7
+  digitalWrite(led3, LOW);     // posar a 0V el pin 8
+  digitalWrite(led4, LOW);     // posar a 0V el pin 9
+  digitalWrite(led5, HIGH);     // posar a 0V el pin 10
+  digitalWrite(led6, LOW);     // posar a 0V el pin 11
+  digitalWrite(led7, LOW);     // posar a 0V el pin 12
+
+  delay(87);                  // es queden leds 500ms encesos
+  
+  digitalWrite(led0, LOW);     // posar a 0V el pin 5
+  digitalWrite(led1, HIGH);     // posar a 0V el pin 6
+  digitalWrite(led2, LOW);     // posar a 0V el pin 7
+  digitalWrite(led3, LOW);     // posar a 0V el pin 8
+  digitalWrite(led4, LOW);     // posar a 0V el pin 9
+  digitalWrite(led5, LOW);     // posar a 0V el pin 10
+  digitalWrite(led6, HIGH);     // posar a 0V el pin 11
+  digitalWrite(led7, LOW);     // posar a 0V el pin 12
+
+  delay(87);                  // es queden leds 500ms encesos
+  
+  digitalWrite(led0, HIGH);     // posar a 0V el pin 5
+  digitalWrite(led1, LOW);     // posar a 0V el pin 6
+  digitalWrite(led2, LOW);     // posar a 0V el pin 7
+  digitalWrite(led3, LOW);     // posar a 0V el pin 8
+  digitalWrite(led4, LOW);     // posar a 0V el pin 9
+  digitalWrite(led5, LOW);     // posar a 0V el pin 10
+  digitalWrite(led6, LOW);     // posar a 0V el pin 11
   digitalWrite(led7, HIGH);     // posar a 0V el pin 12
   
-  delay(500);                  // es queden leds 500ms apagats
+  delay(87); 
+  
+  digitalWrite(led0, LOW);     // posar a 0V el pin 5
+  digitalWrite(led1, LOW);     // posar a 0V el pin 6
+  digitalWrite(led2, LOW);     // posar a 0V el pin 7
+  digitalWrite(led3, LOW);     // posar a 0V el pin 8
+  digitalWrite(led4, LOW);     // posar a 0V el pin 9
+  digitalWrite(led5, LOW);     // posar a 0V el pin 10
+  digitalWrite(led6, LOW);     // posar a 0V el pin 11
+  digitalWrite(led7, LOW);     // posar a 0V el pin 12
+  
+  delay(87); 
 
-          }
-          else
-          {
-digitalWrite(led0, HIGH);    // posar a 5V el pin 5
+  digitalWrite(led0, LOW);     // posar a 0V el pin 5
+  digitalWrite(led1, LOW);     // posar a 0V el pin 6
+  digitalWrite(led2, LOW);     // posar a 0V el pin 7
+  digitalWrite(led3, LOW);     // posar a 0V el pin 8
+  digitalWrite(led4, LOW);     // posar a 0V el pin 9
+  digitalWrite(led5, LOW);     // posar a 0V el pin 10
+  digitalWrite(led6, LOW);     // posar a 0V el pin 11
+  digitalWrite(led7, LOW);     // posar a 0V el pin 12
+  
+  delay(87); 
+      
+      
+    }
+   if (digitalRead(buttonPin3) == 0&&digitalRead(buttonPin2)==1)
+    
+    {
+      digitalWrite(led0, HIGH);    // posar a 5V el pin 5
   digitalWrite(led1, HIGH);    // posar a 5V el pin 6
   digitalWrite(led2, HIGH);    // posar a 5V el pin 7
   digitalWrite(led3, HIGH);    // posar a 5V el pin 8
@@ -78,8 +162,31 @@ digitalWrite(led0, HIGH);    // posar a 5V el pin 5
   digitalWrite(led6, LOW);     // posar a 0V el pin 11
   digitalWrite(led7, LOW);     // posar a 0V el pin 12
   
-  delay(500);                  // es queden leds 500ms apagats
-
-          }
+  delay(500);                  // es queden leds 500ms apagats 
+    }
+   if ((digitalRead(buttonPin2)==1&&digitalRead(buttonPin3)==1)||(digitalRead(buttonPin2)==0&&digitalRead(buttonPin3)==0))
+    {
+      digitalWrite(led0, HIGH);    // posar a 5V el pin 5
+      digitalWrite(led1, LOW);    // posar a 5V el pin 6
+      digitalWrite(led2, HIGH);    // posar a 5V el pin 7
+      digitalWrite(led3, LOW);    // posar a 5V el pin 8
+      digitalWrite(led4, HIGH);    // posar a 5V el pin 9
+      digitalWrite(led5, LOW);    // posar a 5V el pin 10
+      digitalWrite(led6, HIGH);    // posar a 5V el pin 11
+      digitalWrite(led7, LOW);    // posar a 5V el pin 12
+  
+      delay(500);                  // es queden leds 500ms encesos
+  
+      digitalWrite(led0, LOW);     // posar a 0V el pin 5
+      digitalWrite(led1, HIGH);     // posar a 0V el pin 6
+      digitalWrite(led2, LOW);     // posar a 0V el pin 7
+      digitalWrite(led3, HIGH);     // posar a 0V el pin 8
+      digitalWrite(led4, LOW);     // posar a 0V el pin 9
+      digitalWrite(led5, HIGH);     // posar a 0V el pin 10
+      digitalWrite(led6, LOW);     // posar a 0V el pin 11
+      digitalWrite(led7, HIGH);     // posar a 0V el pin 12
+  
+      delay(500);                  // es queden leds 500ms apagats
+    }
  }
 //********** Funcions *************************************************************
