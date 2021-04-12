@@ -8,14 +8,13 @@
 //********** Includes *************************************************************
 
 //********** Variables ************************************************************
-const int leda = 5;          // donar nom al pin 5 de l’Arduino
-const int ledb = 6;          // donar nom al pin 6 de l’Arduino
-const int ledc = 7;          // donar nom al pin 7 de l’Arduino
-const int ledd = 8;          // donar nom al pin 8 de l’Arduino
-const int lede = 9;          // donar nom al pin 9 de l’Arduino
-const int ledf = 10;         // donar nom al pin 10 de l’Arduino
-const int ledg = 11;         // donar nom al pin 11 de l’Arduino
-
+const int ledg = 7;          // donar nom al pin 5 de l’Arduino
+const int ledc = 8;          // donar nom al pin 6 de l’Arduino
+const int ledb = 9;          // donar nom al pin 7 de l’Arduino
+const int leda = 10;          // donar nom al pin 8 de l’Arduino
+const int ledf = 11;          // donar nom al pin 9 de l’Arduino
+const int lede = 12;         // donar nom al pin 10 de l’Arduino
+const int ledd = 13;         // donar nom al pin 11 de l’Arduino
 
 //********** Setup ****************************************************************
 void setup()
@@ -32,47 +31,51 @@ void setup()
 //********** Loop *****************************************************************
 void loop()
 {
-  digitalWrite(ledd, HIGH);    //M
-  digitalWrite(ledb, HIGH);    
-  digitalWrite(ledf, HIGH);    
+  digitalWrite(leda, HIGH);    //M
+  digitalWrite(ledc, HIGH);    
+  digitalWrite(lede, HIGH);
+      
   delay(500);                  // es queden leds 500ms encesos
   
-  digitalWrite(ledf, LOW);     //I
-  digitalWrite(lede, HIGH);     
-  digitalWrite(ledb, LOW);     
-  digitalWrite(ledd, HIGH);     
+  digitalWrite(lede, LOW);     //I
+  digitalWrite(ledb, HIGH);     
+  digitalWrite(leda, LOW);     
+  digitalWrite(ledc, HIGH);     
   
   delay(500);                  // es queden leds 500ms apagats
-  digitalWrite(lede, LOW);     //R
-  digitalWrite(ledd, HIGH);     
+  digitalWrite(ledc, LOW);     //R
+  digitalWrite(lede, HIGH);     
   digitalWrite(ledg, HIGH);        
-  
+  digitalWrite(ledb, LOW);
   delay(500);                  // es queden leds 500ms apagats
-  digitalWrite(ledf, HIGH);     //E
-  digitalWrite(lede, HIGH);     
-  digitalWrite(ledg, HIGH);     
+  digitalWrite(leda, HIGH);     //E
   digitalWrite(ledd, HIGH);     
-  digitalWrite(ledc, HIGH);
+  digitalWrite(lede, HIGH);     
+  digitalWrite(ledf, HIGH);     
+  digitalWrite(ledg, HIGH);
   delay(500);                  // es queden leds 500ms apagats
-  digitalWrite(ledf, LOW);     //I
-  digitalWrite(lede, HIGH);     
-  digitalWrite(ledg, LOW);     
-  digitalWrite(ledd, HIGH);     
-  digitalWrite(ledc, LOW);
+  digitalWrite(leda, LOW);     //I
+  digitalWrite(ledb, HIGH);     
+  digitalWrite(ledd, LOW);     
+  digitalWrite(ledc, HIGH);     
+  digitalWrite(lede, LOW);
+  digitalWrite(ledf, LOW);
+  digitalWrite(ledg, LOW);
   delay(500);                  // es queden leds 500ms apagats
   digitalWrite(ledf, HIGH);     //A
   digitalWrite(lede, HIGH);     
   digitalWrite(leda, HIGH);     
   digitalWrite(ledg, HIGH);     
-  digitalWrite(ledd, HIGH);
+  digitalWrite(ledd, LOW);
   digitalWrite(ledb, HIGH); 
   delay(500);                  // es queden leds 500ms apagats
-  digitalWrite(ledf, LOW);     //A
+  digitalWrite(ledf, LOW);     
   digitalWrite(lede, LOW);     
   digitalWrite(leda, LOW);     
   digitalWrite(ledg, LOW);     
   digitalWrite(ledd, LOW);
   digitalWrite(ledb, LOW); 
+  digitalWrite(ledc, LOW);
   delay(500);                  // es queden leds 500ms apagats
 }
 
