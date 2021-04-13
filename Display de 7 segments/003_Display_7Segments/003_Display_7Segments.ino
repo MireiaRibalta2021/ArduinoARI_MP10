@@ -17,6 +17,7 @@ const int lede = 12;         // donar nom al pin 12 de l’Arduino
 const int ledd = 13;         // donar nom al pin 13 de l’Arduino
 int comptador = 0;
 const int buttonPin2 = 2;     // donar nom al pin 2 de l’Arduino
+int buttonState2 = 0;
 
 //********** Setup ****************************************************************
 void setup()
@@ -34,6 +35,7 @@ void setup()
 //********** Loop *****************************************************************
 void loop()
 {
+  buttonState2 = digitalRead(buttonPin2);
   if (digitalRead(buttonPin2==1)){
     comptador++;
   }
