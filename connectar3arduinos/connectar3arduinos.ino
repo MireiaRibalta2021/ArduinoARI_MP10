@@ -149,7 +149,7 @@ void loop()
   }
   else{
     digitalWrite(pinA1,0);
-    digitalWrite (pinA2,0);
+    digitalWrite(pinA2,0);
     }
 }
 
