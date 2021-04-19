@@ -16,6 +16,7 @@ const int led4 = 9;          // donar nom al pin 9 de l’Arduino
 const int led5 = 10;         // donar nom al pin 10 de l’Arduino
 const int led6 = 11;         // donar nom al pin 11 de l’Arduino
 const int led7 = 12;         // donar nom al pin 12 de l’Arduino
+int comptador = 0;
 
 
 //********** Setup ****************************************************************
@@ -32,12 +33,20 @@ void setup()
   pinMode (A0, INPUT);
   pinMode (A2, INPUT);
   pinMode (A1, OUTPUT);
+  
 }
 
 //********** Loop *****************************************************************
+
 void loop()
 {
-  if(analogRead(A0>200)||A2>200){
+  if (digitalRead(A2==1))
+  {
+    comptador =0;
+    }
+    else{}
+  if(digitalRead((A0==1)||A2==1)&&comptador==0){
+  comptador++;
   digitalWrite(led0, HIGH);    // posar a 5V el pin 5
   digitalWrite(led1, LOW);    // posar a 5V el pin 6
   digitalWrite(led2, LOW);    // posar a 5V el pin 7
@@ -113,7 +122,7 @@ void loop()
   digitalWrite(led6, LOW);    // posar a 5V el pin 11
   digitalWrite(led7, HIGH);    // posar a 5V el pin 12
   delay(500);
-  analogWrite(A1,255);
+  digitalWrite(A1,1);
   }
   else{
     }
