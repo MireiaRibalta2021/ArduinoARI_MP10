@@ -9,22 +9,33 @@
 
 //******* Variables ***********************************************************
 const int speakerPin = 9;   // pin for speaker
-int tempo = 300;
+const int speakerPin2= 11;
+int tempo = 100;
 
 //Melody 1
 //int length = 15; // the number of notes
-//char notes[] = "ccggaagffeeddc "; // a space represents a rest
+//char notes[] = "ccggaagffeeddcd "; // a space represents a rest
 //int beats[] = { 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 4 }; // time notes
 
 //Melody 2 himne del Barça
-int length = 21; 
-char notes[] = "egC egC egCDCb abCabg";
-int beats[]={3, 2, 2, 1, 3, 2, 2, 1, 2, 1, 2, 2, 1, 3, 1, 2, 1, 1, 1, 1, 3, 1};
+//int length = 21; 
+//char notes[] = "egC egC egCDCb abCabg";
+//int beats[]={3, 2, 2, 1, 3, 2, 2, 1, 2, 1, 2, 2, 1, 3, 1, 2, 1, 1, 1, 1, 3, 1};
 
-//Melody 3
-//int length = XX;
-//char notes[] = "XXX";
-//int beats[] = { X, X, X};
+//Melody 3 OH SUSANNA!
+int length = 56;
+char notes[] = "cdeggagecdeedcdcdeggagecdeeddc ffaaaggecdcdeggagecdeeddc ";
+int beats[] = { 1,1,2,2,3,1,2,2,3,1,2,2,2,2,5,1,1,2,2,3,1,2,2,3,1,2,2,2,2,5,2,4,4,2,4,2,2,2,2,2,5,1,1,2,2,3,1,2,2,3,1,2,2,2,2,5,5};
+
+//Melody 4 1A VEU
+//int length = 56;
+//char notes[] = "cgegcgegcgegcgeg";
+//int beats[] = { 1,1,2,2,3,1,2,2,3,1,2,2,2,2,5,1,1,2,2,3,1,2,2,3,1,2,2,2,2,5,2,4,4,2,4,2,2,2,2,2,5,1,1,2,2,3,1,2,2,3,1,2,2,2,2,5,5};
+
+//Melody 5 2a veu
+//int length = 69;
+//char notes[] = "      eeegeccddeceeegeccddc dddecdfdfec dddecefdfe   eeegeccddeceeegeccddc ";
+//int beats[] = {1,1,1,1,1,1,2,1,1,3,2,1,1,1,1,2,1,2,2,2,3,2,1,1,1,1,2,5,2,3,2,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1};
 
 //****** Setup ****************************************************************
 void setup() {
@@ -33,7 +44,9 @@ void setup() {
 }
 
 //***** Loop *****************************************************************
+
 void loop() {
+  
     for (int i = 0; i < length; i++) {
     if (notes[i] == ' ') {
       delay(beats[i] * tempo);
